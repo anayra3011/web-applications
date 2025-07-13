@@ -1,0 +1,266 @@
+ <!DOCTYPE html>
+<html>        
+<head>                                                 //        <>            { }           [ ]       ^      /\       ||
+<title>tic tac toe</title>
+<style>
+            h1 {
+                      color:blue; font-size;80px;
+               }
+             .buttons {height:300px;width:300px;  font-size:30px;color: green }
+              p{
+                    text-align:center;
+              }
+
+</style>
+<script>
+        var turn="X"
+
+        function btn1click()
+        {
+              if (document.getElementById("btn1").value=="-" && checkWinner() == false)
+              {
+                      document.getElementById("btn1").value=turn
+
+              if (checkWinner()==true)
+              {
+              alert("the winner is" +turn)
+              }
+              if(checkDraw()==true)
+              {
+                      alert("The game is a draw!")
+              }
+              if(turn=="X")
+                     turn="0"
+              else 
+                     turn="X"
+               }
+         }
+        function btn2click()
+        {
+              if (document.getElementById("btn2").value=="-" && checkWinner() == false)
+              {
+                      document.getElementById("btn2").value=turn
+
+              if (checkWinner()==true)
+              {
+              alert("the winner is" +turn)
+              }
+              if(checkDraw()==true)
+              {
+                      alert("The game is a draw!")
+              }
+              if(turn=="X")
+                     turn="0"
+              else 
+                     turn="X"
+               }
+         }
+        function btn3click()
+        {
+              if (document.getElementById("btn3").value=="-" && checkWinner() == false)
+              {
+                      document.getElementById("btn3").value=turn
+
+              if (checkWinner()==true)
+              {
+              alert("the winner is" +turn)
+              }
+              if(checkDraw()==true)
+              {
+                      alert("The game is a draw!")
+              }
+              if(turn=="X")
+                     turn="0"
+              else 
+                     turn="X"
+               }
+         }
+        function btn4click()
+        {
+              if (document.getElementById("btn4").value=="-" && checkWinner() == false)
+              {
+                      document.getElementById("btn4").value=turn
+
+              if (checkWinner()==true)
+              {
+              alert("the winner is" +turn)
+              }
+              if(checkDraw()==true)
+              {
+                      alert("The game is a draw!")
+              }
+              if(turn=="X")
+                     turn="0"
+              else 
+                     turn="X"
+               }
+         }
+        function btn5click()
+        {
+              if (document.getElementById("btn5").value=="-" && checkWinner() == false)
+              {
+                      document.getElementById("btn5").value=turn
+
+              if (checkWinner()==true)
+              {
+              alert("the winner is" +turn)
+              }
+              if(checkDraw()==true)
+              {
+                      alert("The game is a draw!")
+              }
+              if(turn=="X")
+                     turn="0"
+              else 
+                     turn="X"
+               }
+         }
+        function btn6click()
+        {
+              if (document.getElementById("btn6").value=="-" && checkWinner() == false)
+              {
+                      document.getElementById("btn6").value=turn
+
+              if (checkWinner()==true)
+              {
+              alert("the winner is" +turn)
+              }
+              if(checkDraw()==true)
+              {
+                      alert("The game is a draw!")
+              }
+              if(turn=="X")
+                     turn="0"
+              else 
+                     turn="X"
+               }
+         }
+        function btn7click()
+        {
+              if (document.getElementById("btn7").value=="-" && checkWinner() == false)
+              {
+                      document.getElementById("btn7").value=turn
+
+              if (checkWinner()==true)
+              {
+              alert("the winner is" +turn)
+              }
+              if(checkDraw()==true)
+              {
+                      alert("The game is a draw!")
+              }
+              if(turn=="X")
+                     turn="0"
+              else 
+                     turn="X"
+               }
+         }
+        function btn8click()
+        {
+              if (document.getElementById("btn8").value=="-" && checkWinner() == false)
+              {
+                      document.getElementById("btn8").value=turn
+
+              if (checkWinner()==true)
+              {
+              alert("the winner is" +turn)
+              }
+              if(checkDraw()==true)
+              {
+                      alert("The game is a draw!")
+              }
+              if(turn=="X")
+                     turn="0"
+              else 
+                     turn="X"
+               }
+         }
+        function btn9click()
+        {
+              if (document.getElementById("btn9").value=="-" && checkWinner() == false)
+              {
+                      document.getElementById("btn9").value=turn
+
+              if (checkWinner()==true)
+              {
+              alert("the winner is" +turn)
+              }
+              if(checkDraw()==true)
+              {
+                      alert("The game is a draw!")
+              }
+              if(turn=="X")
+                     turn="0"
+              else 
+                     turn="X"
+               }
+         }
+         function checkWinner()
+         {
+               if(document.getElementById("btn1").value == turn && document.getElementById("btn2").value == turn && document.getElementById("btn3").value==turn )
+               {
+                      return true
+               }
+               else if(document.getElementById("btn4").value == turn && document.getElementById("btn5").value == turn && document.getElementById("btn6").value==turn )
+               {
+                      return true
+               }
+
+               else if(document.getElementById("btn7").value == turn && document.getElementById("btn8").value == turn && document.getElementById("btn9").value==turn )
+               {
+                      return true
+               }
+               
+               else if(document.getElementById("btn1").value == turn && document.getElementById("btn5").value == turn && document.getElementById("btn9").value==turn )
+               {
+                      return true
+               }
+               else if(document.getElementById("btn3").value == turn && document.getElementById("btn5").value == turn && document.getElementById("btn7").value==turn )
+               {
+                      return true
+               }
+               else if(document.getElementById("btn1").value == turn && document.getElementById("btn4").value == turn && document.getElementById("btn7").value==turn )
+               {
+                      return true
+               }
+               else if(document.getElementById("btn2").value == turn && document.getElementById("btn5").value == turn && document.getElementById("btn8").value==turn )
+               {
+                      return true
+               }
+               else if(document.getElementById("btn3").value == turn && document.getElementById("btn6").value == turn && document.getElementById("btn9").value==turn )
+               {
+                      return true
+               }
+               else
+               {
+                      return false
+         }
+}
+               function checkDraw()
+               {
+                       if(document.getElementById("btn1").value=="-" || document.getElementById("btn2").value=="-" || document.getElementById("btn3").value=="-" || document.getElementById("btn4").value=="-" || document.getElementById("btn5").value=="-" || document.getElementById("btn6").value=="-" || document.getElementById("btn7").value=="-" || document.getElementById("btn8").value=="-" || document.getElementById("btn9").value=="-")
+                                return false
+                       else
+                                return true
+               }
+
+</script>
+</head>
+<body bgcolor="lightblue">
+     <h1 align="center"> TIC TAC TOE</h1>
+       <p>
+            <input type="button" value="-" id="btn1" class="buttons" onclick="btn1click()">
+            <input type="button" value="-" id="btn2" class="buttons"  onclick="btn2click()">
+            <input type="button" value="-" id="btn3" class="buttons"  onclick="btn3click()">
+            <br>
+            <input type="button" value="-" id="btn4" class="buttons"  onclick="btn4click()">
+            <input type="button" value="-" id="btn5" class="buttons"  onclick="btn5click()">
+            <input type="button" value="-" id="btn6" class="buttons"  onclick="btn6click()">
+            <br>
+            <input type="button" value="-" id="btn7" class="buttons"  onclick="btn7click()">
+            <input type="button" value="-" id="btn8" class="buttons"  onclick="btn8click()">
+            <input type="button" value="-" id="btn9" class="buttons"  onclick="btn9click()">
+       <br>
+       </p>
+</body>
+</html>
