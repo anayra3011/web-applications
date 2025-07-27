@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>          
+<head>
+<title>book club</title>
+<style>
+</style>
+</head>
+<body>
+<h1 align=center>book club</h1>
+
+<script>
+
+
+var bookNames=["The hunger games","The great gatsby","1984","Of Mice and Men"]
+var authorNames=["suzanne collins","F.scott fitzgerald","george orwell","john steinback"]
+var imageLinks=["https://m.media-amazon.com/images/M/MV5BMWI1OGM4YjQtNmIxNi00YmE2LWJkNTAtY2Q0YjU4NTI5NWQyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg","https://assets.lulu.com/cover_thumbs/8/d/8dzdnj-front-shortedge-384.jpg","https://m.media-amazon.com/images/I/81qZ5kGMQ1L._UF1000,1000_QL80_.jpg","https://m.media-amazon.com/images/I/71xXwHUrsxL._UF1000,1000_QL80_.jpg"]
+var bookRatings=[0,0,0,0]
+
+function rateBook(id)
+{
+for(var i=0;i<bookNames.length;i++)
+{
+if (bookNames[i]==id)
+   {
+var count=0
+    for(var j=1;j<=5;j++)
+{
+var imageId=id+j
+
+if(document.getElementById(imageId).src=="https://www.freeiconspng.com/uploads/yellow-christmas-star-png-18.png")
+count++
+}
+bookRatings[i]=count
+console.log(bookRatings)
+}
+}
+}
+
+function displayBooksByRating()
+{
+var rating=parseInt(document.getElementById("select").value)
+document.getElementById("result").innerText=" "
+for(var i=0;i<bookRatings.length;i++)
+{
+if(bookRatings[i]==rating)
+{
+document.getElementById("result").innerHTML+=bookNames[i]+"<br>"
+}
+
+}
+}
+
+
+
+
+function changeStar(id)
+{
+if (document.getElementById(id).src=="https://icons.veryicon.com/png/o/miscellaneous/personal-appropriation/white-star.png")
+  {
+      document.getElementById(id).src="https://www.freeiconspng.com/uploads/yellow-christmas-star-png-18.png"
+  }
+
+else
+  {
+    document.getElementById(id).src="https://icons.veryicon.com/png/o/miscellaneous/personal-appropriation/white-star.png"
+  }
+}
+
+
+
+
+for (var i=0;i<imageLinks.length;i++)
+{
+var img=document.createElement("img")
+img.setAttribute("src",imageLinks[i])
+img.setAttribute("height","400")
+img.setAttribute("width","350")
+document.body.appendChild(img)
+var br=document.createElement("br")
+document.body.appendChild(br)
+
+
+var h1=document.createElement("h1")
+var textNode=document.createTextNode(bookNames[i] + " : " )
+h1.appendChild(textNode)
+document.body.appendChild(h1)
+
+var authorP=document.createElement("authorP")
+var textNode=document.createTextNode(authorNames[i])
+h1.appendChild(textNode)
+document.body.appendChild(authorP)
+br=document.createElement("br")
+document.body.appendChild(br)
+
+var star1=document.createElement("img")
+star1.setAttribute("src","https://icons.veryicon.com/png/o/miscellaneous/personal-appropriation/white-star.png")
+star1.setAttribute("id",bookNames[i] + "1")
+star1.setAttribute("height","25")
+star1.setAttribute("width","25")
+document.body.appendChild(star1)
+star1.setAttribute("onclick","changeStar('" +(bookNames[i]+"1")+"')")
+
+var star2=document.createElement("img")
+star2.setAttribute("src","https://icons.veryicon.com/png/o/miscellaneous/personal-appropriation/white-star.png")
+star2.setAttribute("id",bookNames[i] + "2")
+star2.setAttribute("height","25")
+star2.setAttribute("width","25")
+document.body.appendChild(star2)
+star2.setAttribute("onclick","changeStar('" +(bookNames[i]+"2")+"')")
+
+var star3=document.createElement("img")
+star3.setAttribute("src","https://icons.veryicon.com/png/o/miscellaneous/personal-appropriation/white-star.png")
+star3.setAttribute("id",bookNames[i] + "3")
+star3.setAttribute("height","25")
+star3.setAttribute("width","25")
+document.body.appendChild(star3)
+star3.setAttribute("onclick","changeStar('" +(bookNames[i]+"3")+"')")
+
+var star4=document.createElement("img")
+star4.setAttribute("src","https://icons.veryicon.com/png/o/miscellaneous/personal-appropriation/white-star.png")
+star4.setAttribute("id", bookNames[i] + "4")
+star4.setAttribute("height","25")
+star4.setAttribute("width","25")
+document.body.appendChild(star4)
+star4.setAttribute("onclick","changeStar('" +(bookNames[i]+"4")+"')")
+
+var star5=document.createElement("img")
+star5.setAttribute("src","https://icons.veryicon.com/png/o/miscellaneous/personal-appropriation/white-star.png")
+star5.setAttribute("id", bookNames[i] + "5")
+star5.setAttribute("height","25")
+star5.setAttribute("width","25")
+document.body.appendChild(star5)
+star5.setAttribute("onclick","changeStar('" +(bookNames[i]+"5")+"')")
+br=document.createElement("br")
+document.body.appendChild(br)
+
+var button=document.createElement("input")
+button.setAttribute("type","button")
+button.setAttribute("value","rate")
+button.setAttribute("onclick","rateBook('"+ bookNames[i]+"')")
+document.body.appendChild(button)
+br=document.createElement("br")
+document.body.appendChild(br)//
+
+}
+</script>
+
+<p>Select rating:</p>
+<select  id="select" >
+<option> 1 </option>
+<option> 2 </option>
+<option> 3 </option>
+<option> 4 </option>
+<option> 5 </option>
+</select>
+
+<input type=button value="display" onclick="displayBooksByRating()">
+<p id=result> </p>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<p> 1. What is 25+25? <input id="Q1"  type="text"> 
+
+<p> 2. What is 95-20? <input id="Q2"  type="text"> 
+
+<p> 3. What is 16 / 4? 
+
+<input type="radio" name="Q3" id="4"> 4
+<input type="radio" name="Q3" id="5"> 5
+<input type="radio" name="Q3" id="3"> 3
+
+<p> 4. What is 20*3? 
+
+<input type="radio" name="Q4" id="30"> 30
+<input type="radio" name="Q4" id="60"> 60
+<input type="radio" name="Q4" id="600"> 600
+
+<p> 5. What is 2 cubed? 
+
+<input type="radio" name="Q5" id="4"> 4
+<input type="radio" name="Q5" id="6"> 6
+<input type="radio" name="Q5" id="8"> 8
+<br>
+<input type="button" onclick="submitQuiz()" value="submit">
+</br>
+
+<script>
+
+function submitQuiz()
+{
+var score=0
+var answer1=document.getElementById("Q1").value
+if (answer1=="50")
+{
+score=score+1
+}
+
+var answer2=document.getElementById("Q2").value
+if (answer2=="70")
+{
+score=score+1
+}
+
+
+if(document.getElementById("4").checked==true)
+{
+score=score+1
+}
+
+
+if(document.getElementById("60").checked==true)
+{
+score=score+1
+}
+
+
+if(document.getElementById("8").checked==true)
+{
+score=score+1
+}
+alert("score is " +score)
+}
+
+
+</script>
+</body>
+</html>
