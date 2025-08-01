@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>hangman</title>
+</head>
+<body>
+
+<h1 id="HangmanTitle" style="text-align:center">Hangman</h1>
+
+<p id="emptyParagraph" style="text-align:center"></p>
+
+<p style="text-align:center">
+<button id="buttonA" onclick=checkAlphabet("a")>A</button>
+<button id="buttonB" onclick=checkAlphabet("b")>B</button>
+<button id="buttonC" onclick=checkAlphabet("c")>C</button>
+<button id="buttonD" onclick=checkAlphabet("d")>D</button>
+<button id="buttonE" onclick=checkAlphabet("e")>E</button>
+<br></br>
+<button id="buttonF" onclick=checkAlphabet("f")>F</button>
+<button id="buttonG" onclick=checkAlphabet("g")>G</button>
+<button id="buttonH" onclick=checkAlphabet("h")>H</button>
+<button id="buttonI" onclick=checkAlphabet("i")>I</button>
+<button id="buttonJ" onclick=checkAlphabet("j")>J</button>
+<br></br>
+<button id="buttonK" onclick=checkAlphabet("k")>K</button>
+<button id="buttonL" onclick=checkAlphabet("l")>L</button>
+<button id="buttonM" onclick=checkAlphabet("m")>M</button>
+<button id="buttonN" onclick=checkAlphabet("n")>N</button>
+<button id="buttonO" onclick=checkAlphabet("o")>O</button>
+<br></br>
+<button id="buttonP" onclick=checkAlphabet("p")>P</button>
+<button id="buttonQ" onclick=checkAlphabet("q")>Q</button>
+<button id="buttonR" onclick=checkAlphabet("r")>R</button>
+<button id="buttonS" onclick=checkAlphabet("s")>S</button>
+<button id="buttonT" onclick=checkAlphabet("t")>T</button>
+<br></br>
+<button id="buttonU" onclick=checkAlphabet("u")>U</button>
+<button id="buttonV" onclick=checkAlphabet("v")>V</button>
+<button id="buttonW" onclick=checkAlphabet("w")>W</button>
+<button id="buttonX" onclick=checkAlphabet("x")>X</button>
+<button id="buttonY" onclick=checkAlphabet("y")>Y</button>
+<button id="buttonZ" onclick=checkAlphabet("z")>Z</button>
+<br></br>
+</p>
+
+<p style="text-align:center">
+<img src="https://as2.ftcdn.net/v2/jpg/05/17/38/33/1000_F_517383341_8nWEFfM1KL3K5LNTjUDrne3x0kZiuxuj.jpg" id="hangmanImage">
+</p>
+<script>
+var hangmanWords=["elephant","dictionary","thesaurus","computer","weather","speaker","monkey"]
+
+var randomNumber=Math.floor(Math.random()*hangmanWords.length)
+
+var word=hangmanWords[randomNumber]
+
+var blanks=[]
+for (i=0;i<word.length;i++)
+{blanks.push("_")}
+display()
+
+function display()
+{
+var str=""
+for(i=0;i<blanks.length;i++)
+{
+str=str+blanks[i]+" "
+}
+document.getElementById("emptyParagraph").innerText=str
+}
+
+
+var numGuess=7
+
+function checkAlphabet(letter)
+{
+if (checkWinner()==true)
+{
+return
+}
+else
+{
+if(numGuess>0){
+var flag=false
+for(i=0;i<word.length;i++)
+{
+if(word.charAt(i)==letter)
+{
+blanks[i]=letter
+flag=true
+}
+}
+display()
+if(checkWinner()==true)
+{
+alert("you win")
+}
+if(flag==false)
+{
+numGuess=numGuess-1
+displayImage()
+}
+}
+}}
+
+
+function checkWinner()
+{
+for(i=0;i<blanks.length;i++)
+{
+if(blanks[i]=="_")
+{
+return false
+}}return true
+}
+
+
+function displayImage()
+{
+if (checkWinner()==true)
+{
+return
+}
+else
+
+{
+if (numGuess==6)
+{
+document.getElementById("hangmanImage").src="h1.png"
+}
+else if (numGuess==5)
+{
+document.getElementById("hangmanImage").src="h2.png"
+}
+else if (numGuess==4)
+{
+document.getElementById("hangmanImage").src="h3.png"
+}
+else if (numGuess==3)
+{
+document.getElementById("hangmanImage").src="h4.png"
+}
+else if (numGuess==2)
+{
+document.getElementById("hangmanImage").src="h5.png"
+}
+else if (numGuess==1)
+{
+document.getElementById("hangmanImage").src="h6.png"
+}
+else if (numGuess==0)
+{
+document.getElementById("hangmanImage").src="h7.png"
+alert("You lose")
+}
+}
+}
+</script>
+</body>
+</html>
