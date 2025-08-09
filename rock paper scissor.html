@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>          
+<head>
+<title>rock paper and scissors</title>
+<style>
+     body{
+font-family:"Times New Roman";
+text-align:center;
+background-color:#243A73;
+color:#333;
+}
+h1
+{
+color:white;
+}
+img
+{
+width:150px;
+margin:10px;
+border:2px solid black;
+border-radius:12px;
+cursor:pointer;
+}
+img:hover;
+{
+border-color:red;
+}
+{
+font-weight:bold;
+margin:20px 0;
+}
+
+{
+text-align:left;
+}
+{
+text-align:right;
+}
+</style>
+</head>
+<body>
+<h1 align=center>rock paper and scissors</h1>
+
+<img src="https://atlas-content-cdn.pixelsquid.com/stock-images/rock-stone-AvXzl49-600.jpg" style="width:25%" onclick="rockClick()">
+
+<img src="https://m.media-amazon.com/images/I/61OorFhm6SL._UF894,1000_QL80_.jpg" style="width:25%" onclick="paperClick()">
+
+<img src="https://breeze-media.vega.co.in/media/catalog/product/cache/1ef41c8834aa6b772f4686b0f4051c34/1/h/1hh.jpg" style="width:25%" onclick="scissorClick()">
+
+<br><br>
+
+<h1 style="text-align: center ;">choose one option <h1>
+
+<p id="gameRound" style="text-align:center">round=1</p>
+<p id="player" style="text-align:left">Player Score=0</p>
+<p id="computer" style="text-align:right">Computer Score=0</p>
+
+<script>
+
+var round=1
+var playerScore=0
+var computerScore=0
+
+function rockClick()
+{
+var computer=Math.floor(Math.random()*(3-1+1))+1
+if (computer==1)
+{
+alert("computer chose rock. its a tie")
+}
+else if (computer==2)
+{
+alert("computer chose paper. you lose")
+computerScore=computerScore+1
+}
+else
+{
+alert("computer chose scissors. you win")
+playerScore=playerScore+1
+}
+round=round+1
+document.getElementById("gameRound").innerText="Round= "+ round
+document.getElementById("player").innerText="Player Score= "+playerScore
+document.getElementById("computer").innerText="Computer Score= "+computerScore
+
+if (round === 6)
+{
+if (playerScore>computerScore)
+{
+alert("you win")
+}
+else if (computerScore>playerScore)
+{
+alert("computer wins")
+}
+else
+{
+alert("its a tie")
+}
+round=1
+}
+}
+
+function paperClick()
+{
+var computer=Math.floor(Math.random()*(3-1+1))+1
+if (computer==1)
+{
+alert("computer chose rock. you win")
+}
+else if (computer==2)
+{
+alert("computer chose paper. its a tie")
+}
+else
+{
+alert("computer chose scissors. you lose")
+computerScore=computerScore+1
+}
+round=round+1
+document.getElementById("gameRound").innerText="Round= "+round
+document.getElementById("player").innerText="Player Score= "+playerScore
+document.getElementById("computer").innerText="Computer Score= "+computerScore
+
+if (round === 6)
+{
+if (playerScore>computerScore)
+{
+alert("you win")
+}
+else if (computerScore>playerScore)
+{
+alert("computer wins")
+}
+else
+{
+alert("its a tie")
+}
+round=1
+}
+}
+
+
+function scissorClick()
+{
+var computer=Math.floor(Math.random()*(3-1+1))+1
+if (computer==1)
+{
+alert("computer chose rock. you lose")
+}
+else if (computer==2)
+{
+alert("computer chose paper. you win")
+}
+else
+{
+alert("computer chose scissors. its a tie")
+computerScore=computerScore+1
+}
+round=round+1
+document.getElementById("gameRound").innerText="Round= "+ round
+document.getElementById("player").innerText="Player Score= "+playerScore
+document.getElementById("computer").innerText="Computer Score= "+computerScore
+
+if (round === 6)
+{
+if (playerScore>computerScore)
+{
+alert("you win")
+}
+else if (computerScore>playerScore)
+{
+alert("computer wins")
+}
+else
+{
+alert("its a tie")
+}
+round=1
+}
+}
+</script>
+
+</body>
+</html>
